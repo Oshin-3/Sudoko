@@ -1,0 +1,53 @@
+body
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+hr
+{
+    width: 50%;
+}
+
+#board
+{
+    background-color: yellow;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap; /*The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked*/
+} 
+
+#digits
+{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    margin: 0 auto;
+     flex-wrap: wrap;
+}
+
+.number
+{
+    width: 44px;
+    height: 44px;
+    margin: 2px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15px;
+    border: 1px solid #749BC2;
+    font-weight: bold;
+    background-color: #749BC2;
+    color: #F6F4EB;
+    border-radius: 2px;
+}
+
+.number-selected
+{
+    background-color: #F6F4EB;
+    color: #749BC2;
+    border-color:  #F6F4EB;
+}
