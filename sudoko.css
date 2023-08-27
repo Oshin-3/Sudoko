@@ -9,9 +9,17 @@ hr
     width: 50%;
 }
 
+#errors
+{
+    width: 450px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: 23%;
+    color: #91C8E4;
+}
+
 #board
 {
-    background-color: yellow;
     width: 450px;
     height: 450px;
     display: flex;
@@ -37,7 +45,7 @@ hr
     align-items: center;
     justify-content: center;
     display: flex;
-    font-size: 15px;
+    font-size: 20px;
     border: 1px solid #749BC2;
     font-weight: bold;
     background-color: #749BC2;
@@ -49,5 +57,53 @@ hr
 {
     background-color: #F6F4EB;
     color: #749BC2;
-    border-color:  #F6F4EB;
+    border-color:  
 }
+
+.tiles
+{
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15px;
+    color: #749BC2;
+    /* border-color:  #F6F4EB; */
+}
+
+.board-color
+{
+    background-color: #F6F4EB;
+}
+
+.solution-board-color
+{
+    background-color: #faf9f5;
+    color: #4682A9;
+    font-weight: bold;
+}
+
+.box-border-right
+{
+    border-right: 2px solid #4682A9;
+}
+
+.bottom-border
+{
+    border-bottom: 1px solid #91C8E4;
+}
+
+.right-border
+{
+    border-right: 1px solid #91C8E4;
+}
+
+.box-border-left
+{
+    border-bottom: 2px solid #4682A9;
+}
+
+
+   
