@@ -105,5 +105,11 @@ hr
     border-bottom: 2px solid #4682A9;
 }
 
-
+#completion-board
+{
+    background-color: #faf9f5;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
    

@@ -27,9 +27,18 @@ var solution = [
     "812945763"
 ]
 
+var frequency = [0, 9, 9, 9, 9, 9, 9, 9, 9, 9];
+for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+        let digit = parseInt(board[i][j] - '0');
+        frequency[digit] -= 1;
+    }
+}
+
 window.onload = function()
 {
     setGame();
+    document.getElementById("completion-board").style.display = "none";
 }
 
 function setGame()
@@ -106,16 +115,38 @@ function solutionNumber()
         {
             this.innerText = numSeleted.id;
         }
-
+       
         this.innerText = numSeleted.id;
+        frequency[parseInt(numSeleted.id)] -= 1;
         if (solution[r][c] != numSeleted.id)
         {
             errors += 1;
+            frequency[parseInt(numSeleted.id)] += 1;
             document.getElementById("error-count").innerText = errors;
         }
 
     }
+
+    checkFrequency();
     
+}
+
+function checkFrequency()
+{
+    let flg = true;
+    for (let i = 1; i <= 9; i++) {
+        if (frequency[i] != 0)
+        {
+            flg = false;
+        }
+    }
+
+    if (flg)
+    {
+        document.getElementById("game").style.display = "none";
+        document.getElementById("completion-board").style.display = "";
+        document.getElementById("final-error-count").innerText = errors;
+    }
 }
 
 
