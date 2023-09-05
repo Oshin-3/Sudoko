@@ -112,4 +112,10 @@ hr
     height: 500px;
     margin: 0 auto;
 }
+
+.disable-number
+{
+    background-color: grey;
+    color: lightgrey;
+}
    
