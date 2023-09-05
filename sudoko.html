@@ -8,12 +8,21 @@
     <script src="sudoko.js"></script>
 </head>
 <body>
-    <h1>Sudoko</h1>
-    <hr>
-    <p id="errors">Errors : <span id="error-count" style="color: tomato;">0</span></p>
+    <div id="game">
+        <h1>Sudoko</h1>
+        <hr>
+        <p id="errors">Errors : <span id="error-count" style="color: tomato;">0</span></p>
 
-    <div id="board"></div>
-    <br>
-    <div id="digits"></div>
+        <div id="board"></div>
+        <br>
+        <div id="digits"></div>
+    </div>
+    <div id="completion-board">
+        <h2 style="padding-top: 10%;">Congratulations!!!</h2>
+        <p style="color: #4682A9;">You have successfully completed the game</p>
+        <hr style="width: 450px;">
+        <p id="errors" style="text-align: right;">Errors : <span id="final-error-count" style="color: tomato;"></span></p>
+
+    </div>
 </body>
 </html>
