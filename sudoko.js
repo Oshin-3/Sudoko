@@ -34,6 +34,7 @@ for (let i = 0; i < 9; i++) {
         frequency[digit] -= 1;
     }
 }
+console.log("actual frequency : " + frequency);
 
 window.onload = function()
 {
@@ -105,6 +106,8 @@ function selectNumber()
 
 function solutionNumber()
 {
+    
+    
     if (numSeleted)
     {
         let coords = this.id.split("-"); //["0", "0"]
@@ -128,7 +131,14 @@ function solutionNumber()
     }
 
     checkFrequency();
-    
+    console.log(frequency);
+    //to check if frequency is 0, if yes then disable that title
+    if (frequency[parseInt(numSeleted.id)] == 0)
+    {
+        console.log("Inside disable code");
+        numSeleted.removeEventListener("click", selectNumber);
+        numSeleted.classList.add("disable-number");
+    }
 }
 
 function checkFrequency()
