@@ -2,6 +2,7 @@ body
 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
+    color: #FF5733;
 }
 
 hr
@@ -15,7 +16,7 @@ hr
     height: 50px;
     margin-left: auto;
     margin-right: 23%;
-    color: #91C8E4;
+    color: #818589;
 }
 
 #board
@@ -46,63 +47,63 @@ hr
     justify-content: center;
     display: flex;
     font-size: 20px;
-    border: 1px solid #749BC2;
+    border: 1px solid #818589;
     font-weight: bold;
-    background-color: #749BC2;
-    color: #F6F4EB;
+    background-color: #818589;
+    color: #ffffff;
     border-radius: 2px;
 }
 
 .number-selected
 {
-    background-color: #F6F4EB;
-    color: #749BC2;
-    border-color:  #F6F4EB
+    background-color: #E5E4E2;
+    color: #FF5733;
+    border-color:  #E5E4E2
 }
 
 .tiles
 {
-    width: 48px;
-    height: 48px;
+    width: 49px;
+    height: 49px;
     text-align: center;
     align-items: center;
     justify-content: center;
     display: flex;
     font-size: 15px;
-    color: #749BC2;
+    color: #818589;
     /* border-color:  #F6F4EB; */
 }
 
 .board-color
 {
-    background-color: #F6F4EB;
+    background-color: lightgray;
 }
 
 .solution-board-color
 {
-    background-color: #faf9f5;
-    color: #4682A9;
+    background-color: #E5E4E2;
+    color: #FF5733;
     font-weight: bold;
 }
 
 .box-border-right
 {
-    border-right: 2px solid #4682A9;
+    border-right: 2px solid #FF5733;
 }
 
 .bottom-border
 {
-    border-bottom: 1px solid #91C8E4;
+    border-bottom: 1px solid #ffffff;
 }
 
 .right-border
 {
-    border-right: 1px solid #91C8E4;
+    border-right: 1px solid #ffffff;
 }
 
 .box-border-left
 {
-    border-bottom: 2px solid #4682A9;
+    border-bottom: 2px solid #FF5733;
 }
 
 #completion-board
@@ -115,7 +116,8 @@ hr
 
 .disable-number
 {
-    background-color: grey;
-    color: lightgrey;
+    border-color: lightgray;
+    background-color: lightgray;
+    color: black;
 }
    
