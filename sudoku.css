@@ -121,3 +121,10 @@ hr
     color: black;
 }
    
+#stats
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
