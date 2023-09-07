@@ -28,13 +28,19 @@ var solution = [
 ]
 
 var frequency = [0, 9, 9, 9, 9, 9, 9, 9, 9, 9];
+var totalFrequqncy = 81;
 for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
-        let digit = parseInt(board[i][j] - '0');
-        frequency[digit] -= 1;
+        if (board[i][j] != '-')
+        {
+            let digit = parseInt(board[i][j] - '0');
+            frequency[digit] -= 1;
+            totalFrequqncy -= 1;
+        }
     }
 }
 console.log("actual frequency : " + frequency);
+console.log("total frequncy :" + totalFrequqncy);
 
 window.onload = function()
 {
@@ -113,25 +119,28 @@ function solutionNumber()
         let coords = this.id.split("-"); //["0", "0"]
         let r = parseInt(coords[0]);
         let c = parseInt(coords[1]);
-
+        if (this.innerText == solution[r][c])
+            return ;
         if (this.innerText != "" && solution[r][c] != numSeleted.id)
         {
             this.innerText = numSeleted.id;
-        }
-       
+        }        
         this.innerText = numSeleted.id;
         frequency[parseInt(numSeleted.id)] -= 1;
+        totalFrequqncy -= 1;
         if (solution[r][c] != numSeleted.id)
         {
             errors += 1;
             frequency[parseInt(numSeleted.id)] += 1;
+            totalFrequqncy += 1;
             document.getElementById("error-count").innerText = errors;
         }
 
     }
 
-    checkFrequency();
+    //checkFrequency();
     console.log(frequency);
+    console.log(totalFrequqncy);
     //to check if frequency is 0, if yes then disable that title
     if (frequency[parseInt(numSeleted.id)] == 0)
     {
@@ -139,24 +148,46 @@ function solutionNumber()
         numSeleted.removeEventListener("click", selectNumber);
         numSeleted.classList.add("disable-number");
     }
-}
 
-function checkFrequency()
-{
-    let flg = true;
-    for (let i = 1; i <= 9; i++) {
-        if (frequency[i] != 0)
-        {
-            flg = false;
-        }
-    }
-
-    if (flg)
+    if (totalFrequqncy == 0)
     {
         document.getElementById("game").style.display = "none";
         document.getElementById("completion-board").style.display = "";
         document.getElementById("final-error-count").innerText = errors;
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+
+        today = dd + '/' + mm + '/' + yyyy;
+        document.getElementById("current-date").innerText = today;       
     }
 }
+
+// function checkFrequency()
+// {
+//     let flg = true;
+//     for (let i = 1; i <= 9; i++) {
+//         if (frequency[i] != 0)
+//         {
+//             flg = false;
+//         }
+//     }
+
+//     if (flg)
+//     {
+//         document.getElementById("game").style.display = "none";
+//         document.getElementById("completion-board").style.display = "";
+//         document.getElementById("final-error-count").innerText = errors;
+//         let today = new Date();
+//         let dd = String(today.getDate()).padStart(2, '0');
+//         let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+//         let yyyy = today.getFullYear();
+
+//         today = dd + '/' + mm + '/' + yyyy;
+//         document.getElementById("current-date").innerText = today;       
+//     }
+    
+// }
 
 
